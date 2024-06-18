@@ -33,7 +33,8 @@ for_outer:
     MOV R0, R4
     BL LedOutput             // Enviar el estado a los LEDs
 
-    ORR R4, R4, R4, LSL #1   // Desplazar a la izquierda y combinar para la siguiente etapa
+   ORR R4, R4, R4, LSL #1   // Desplazar a la izquierda y combinar
+   ORR R4, R4, R4, LSR #1   // Desplazar a la derecha y combinar
                 
     LDR R6, [R9]             // Cargar el valor de DELAY
     MOV R0, R6
